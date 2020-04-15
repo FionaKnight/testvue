@@ -133,6 +133,9 @@ export default {
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         ref.loggedIn = true;
+         if(ref.$route.params.nextUrl != null){
+           alert(ref.$route.params.nextUrl);
+         }
       } else {
         ref.loggedIn = false;
       }

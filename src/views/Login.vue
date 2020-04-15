@@ -3,7 +3,7 @@
     <HeroImage altText="My Kitties" headerImage="catheader2" />
     <main class="login">
       <h2>Log In</h2>
-      <p>Login for extra kitties</p>
+      <p>Login for extra kitties {{url}}</p>
       <LoginBox />
       <p>
         <router-link to="/signup">Sign Up for a new account to look at kitties</router-link>
@@ -22,7 +22,16 @@ export default {
   components: {
     LoginBox,
     HeroImage
+  },
+  data() {
+    return {
+      url: ""
+    };
   }
+/*   mounted() {
+    const ref = this;
+    this.url = ref.$route.params.nextUrl;
+  } */
 };
 </script>
 
