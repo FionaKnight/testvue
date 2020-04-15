@@ -45,11 +45,10 @@ padding:10px;
 background-color: scale-color($theme_colour, $lightness: -30%);
 color:$almost_black;
 text-decoration: none;
-font-weight:bold;
+font-weight:600;
 display:block;
 width:100px;
-margin:.5em 0 0 0;
-align-self: self-end;
+margin:.67em 0 0 0;
 }
 
 @media only screen and (min-width : 450px) {   

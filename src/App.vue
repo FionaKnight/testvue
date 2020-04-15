@@ -62,27 +62,18 @@ body {
 background-color:rgb(243, 240, 240);
 }
  
-h1, h2, h3 {
+h1, h2{
     font-family:'Raleway','Roboto', Helvetica, Arial, sans-serif;
-    margin: 0.5em 0;
+    margin: .3em 0;
+    font-size:1.3em;
 }
- 
-h1 {
-    font-size:1.8em;
-    text-align:center;
-}
- 
-h3 {
-    margin: 1em 0;
-}
-/*Other mobile first styles */
  
 #app {
 font-family: 'Roboto', Helvetica, Arial, sans-serif;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
-min-width:240px;
-max-width:1000px;
+min-width:320px;
+max-width:1200px;
 width:100%;
 margin:0 auto;
 background: #f2f2f2;
@@ -94,5 +85,3 @@ margin:0;
 }
  
 </style>
-
-

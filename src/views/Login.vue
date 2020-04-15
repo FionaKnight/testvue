@@ -1,66 +1,71 @@
 <template>
-  <div class="login">
-    <h3>Sign In</h3>
-    <input type="text" v-model="email" placeholder="Email"><br>
-    <input type="password" v-model="password" placeholder="Password"><br>
-    <button @click="login">Login</button>
-      <button @click="logout">Logout</button>
-    <p>You don't have an account ? You can <router-link to="/signup">create one</router-link></p>
+  <div>
+    <HeroImage altText="My Kitties" headerImage="catheader2" />
+    <main class="login">
+      <h2>Log In</h2>
+      <p>Login for extra kitties</p>
+      <LoginBox />
+      <p>
+        <router-link to="/signup">Sign Up for a new account to look at kitties</router-link>
+      </p>
+    </main>
   </div>
 </template>
 
 <script>
-/* eslint-disable no-unused-vars */
-import firebase from 'firebase';
-  export default {
-    name: 'login',
-         data() {
-      return {
-        email: '',
-        password: ''
-      }
-         },
-    methods: {  
-      logout() {
-        firebase.auth().signOut().then(() => {
-          alert('logged out')
-        })
-      },
-        login() {
-            firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
-          (user) => {
-            this.$router.replace('mycats')
-          },
-          (err) => {
-            alert('Oops. ' + err.message)
-          }
-        );
+/* eslint-disable no-console */
+import LoginBox from "@/components/LoginBox.vue";
+import HeroImage from "@/components/HeroImage.vue";
 
-        }
-      }
+export default {
+  name: "Login",
+  components: {
+    LoginBox,
+    HeroImage
   }
+};
 </script>
 
-<style scoped>  
-  .login {
-    margin-top: 40px;
-  }
-  input {
-    margin: 10px 0;
-    width: 20%;
-    padding: 15px;
-  }
+ <style lang="scss">
+.login {
   button {
-    margin-top: 20px;
-    width: 10%;
-    cursor: pointer;
+    padding: 1em 2em;
   }
-  p {
-    margin-top: 40px;
-    font-size: 13px;
+  a {
+    display: block;
+    margin-top: 1em;
+    color: rgb(119, 58, 15);
   }
-  p a {
-    text-decoration: underline;
-    cursor: pointer;
+  form {
+    flex-wrap: wrap;
+    max-width: 500px;
+    > span {
+      width: 100%;
+      display: block;
+      margin: 0 0 0.5em 0;
+    }
+    label {
+      color: $almost_black;
+      top: 1em;
+      left: 0.5em;
+      width: 100%;
+    }
+    #mySign {
+      display: none;
+    }
+    input {
+      margin: 0.2em 0;
+      width: 95%;
+      border: 0.2em solid gray;
+      color: $almost_black;
+      &:valid {
+        // Hides the label
+        background: white;
+      }
+    }
   }
-</style>
+}
+</style> 
+
+
+
